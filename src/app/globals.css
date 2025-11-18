@@ -1,0 +1,111 @@
+/* Import Tailwind's base, components, and utilities styles. */
+@import "tailwindcss";
+
+/* Define custom animations to be used in the application. */
+@layer base {
+  @keyframes kenburns {
+    0% {
+      transform: scale(1) translate(0, 0);
+    }
+    100% {
+      transform: scale(1.15) translate(-2%, 2%);
+    }
+  }
+}
+
+.embla {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  height: 100%;
+}
+
+.embla__slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.embla__slide.is-active {
+  opacity: 1;
+}
+
+
+
+.embla-transformations {
+  position: relative;
+  /* Add padding for the buttons */
+  padding: 0 4rem; 
+}
+
+@media (max-width: 640px) {
+  .embla-transformations {
+    padding: 0 2.5rem; /* Less padding on mobile */
+  }
+}
+
+.embla-transformations .embla__viewport {
+  overflow: hidden;
+}
+
+.embla-transformations .embla__container {
+  display: flex;
+  backface-visibility: hidden;
+  touch-action: pan-y;
+  /* Gap between slides */
+  margin-left: -1rem; 
+}
+
+.embla-transformations .embla__slide {
+  /* Each slide takes 100% width */
+  flex: 0 0 100%; 
+  min-width: 0;
+  position: relative;
+  /* Gap between slides */
+  padding-left: 1rem; 
+}
+
+.embla-transformations .embla__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.embla-transformations .embla__button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.embla-transformations .embla__button:disabled {
+  opacity: 0.3;
+}
+
+.embla-transformations .embla__button--prev {
+  left: 0.5rem;
+}
+
+.embla-transformations .embla__button--next {
+  right: 0.5rem;
+}
+
+.embla-transformations .embla__button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
