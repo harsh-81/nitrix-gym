@@ -12,7 +12,6 @@ const categories = [
       { before: '/women/3.png', after: '/women/4.png' },
       { before: '/women/5.png', after: '/women/6.png' },
       { before: '/women/7.png', after: '/women/8.png' },
-      { before: '/women/5.png', after: '/women/6.png' },
       { before: '/women/9.png', after: '/women/10.png' },
       { before: '/women/11.png', after: '/women/12.png' },
       { before: '/women/13.png', after: '/women/14.png' },
